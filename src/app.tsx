@@ -4,18 +4,16 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from '@/components/ui/sheet'
+import { Header } from './components/header'
 
 export function App() {
   return (
     <Sheet>
       <main className="container min-h-screen">
-        <header>
-          <h1>Busca Racing</h1>
-        </header>
-        <SheetTrigger>Open</SheetTrigger>
+        <Header />
       </main>
+
       <SheetContent className="!max-w-md">
         <SheetHeader>
           <SheetTitle>Publicar moto</SheetTitle>
