@@ -1,11 +1,6 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { Sheet } from '@/components/ui/sheet'
 import { Header } from './components/header'
+import { CreateMoto } from './components/create-moto'
 
 export function App() {
   return (
@@ -14,16 +9,7 @@ export function App() {
         <Header />
       </main>
 
-      <SheetContent className="!max-w-md">
-        <SheetHeader>
-          <SheetTitle>Publicar moto</SheetTitle>
-          <SheetDescription>
-            Preencha os detalhes da moto e clique em "Publicar" para adicioná-la
-            ao seu catálogo. Certifique-se de revisar todas as informações antes
-            de finalizar.
-          </SheetDescription>
-        </SheetHeader>
-      </SheetContent>
+      <CreateMoto />
     </Sheet>
   )
 }

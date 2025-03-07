@@ -120,6 +120,16 @@
   padding: 0 20px;
 }
 
+@layer utilities {
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
