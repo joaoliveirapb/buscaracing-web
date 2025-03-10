@@ -69,7 +69,9 @@ export function CreateMoto() {
         </div>
 
         <SheetClose asChild>
-          <Button type="submit">Publicar</Button>
+          <Button type="submit" className="bg-red-600 hover:bg-red-700">
+            Publicar
+          </Button>
         </SheetClose>
       </form>
     </SheetContent>
