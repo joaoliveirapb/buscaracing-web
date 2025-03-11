@@ -137,4 +137,127 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Basic editor styles */
+  .tiptap {
+    @apply min-h-80 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
+  }
+
+  .tiptap > :first-child,
+  .content-moto > :first-child {
+    @apply mt-0;
+  }
+
+  /* List styles */
+  .tiptap ul,
+  .content-moto ul {
+    @apply px-4 my-5 list-disc;
+  }
+
+  .tiptap ol,
+  .content-moto ol {
+    @apply px-4 my-5 mr-4 list-decimal;
+  }
+
+  .tiptap ul li,
+  .tiptap ol li,
+  .content-moto ul li,
+  .content-moto ol li {
+    @apply mb-2;
+  }
+
+  .tiptap ul li p,
+  .tiptap ol li p,
+  .content-moto ul li p,
+  .content-moto ol li p {
+    @apply my-1;
+  }
+
+  .tiptap p,
+  .content-moto p {
+    @apply my-4;
+  }
+
+  /* Heading styles */
+  .tiptap h1,
+  .content-moto h1 {
+    @apply text-4xl font-bold leading-tight break-words mt-10;
+  }
+
+  .tiptap h2,
+  .content-moto h2 {
+    @apply text-3xl font-semibold leading-tight break-words mt-10;
+  }
+
+  .tiptap h3,
+  .content-moto h3 {
+    @apply text-2xl font-semibold leading-tight break-words mt-10;
+  }
+
+  .tiptap h4,
+  .content-moto h4 {
+    @apply text-xl font-medium leading-tight break-words mt-10;
+  }
+
+  .tiptap h5,
+  .content-moto h5 {
+    @apply text-lg font-medium leading-tight break-words mt-10;
+  }
+
+  .tiptap h6,
+  .content-moto h6 {
+    @apply text-base font-medium leading-tight break-words mt-10;
+  }
+
+  /* Code and preformatted text styles */
+  .tiptap code,
+  .content-moto code {
+    @apply text-sm p-1 bg-indigo-950 text-zinc-50 rounded-sm font-mono;
+  }
+
+  .tiptap pre,
+  .content-moto pre {
+    @apply my-6 p-4 bg-indigo-950 text-zinc-50 rounded-md font-mono;
+  }
+
+  .tiptap pre code,
+  .content-moto pre code {
+    @apply text-xs;
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+
+  /* Blockquote styles */
+  .tiptap blockquote,
+  .content-moto blockquote {
+    @apply my-6 pl-4 italic text-gray-700 border-l-[3px] border-zinc-500;
+  }
+
+  /* Horizontal rule styles */
+  .tiptap hr,
+  .content-moto hr {
+    @apply my-8 border-0 border-t-[1px] border-zinc-400;
+  }
+
+  /* Bubble Menu Styles */
+  .bubble-menu {
+    @apply text-zinc-50 bg-zinc-900 border border-zinc-700 rounded-lg shadow-md p-1 flex flex-wrap;
+  }
+
+  .bubble-menu button {
+    @apply bg-transparent px-2 rounded-sm cursor-pointer;
+  }
+
+  .bubble-menu button:hover {
+    @apply bg-red-600;
+  }
+
+  .bubble-menu button.is-active {
+    @apply bg-red-600;
+  }
+
+  .bubble-menu button.is-active:hover {
+    @apply bg-red-700 transition-colors;
+  }
 }

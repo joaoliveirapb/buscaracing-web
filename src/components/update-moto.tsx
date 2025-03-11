@@ -1,4 +1,5 @@
 import type { Moto } from './columns'
+import { useState } from 'react'
 import {
   SheetClose,
   SheetContent,
@@ -9,12 +10,17 @@ import {
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
+import { TipTap } from './tiptap'
 
 interface UpdateMotoProps {
   moto: Moto
 }
 
 export function UpdateMoto({ moto }: UpdateMotoProps) {
+  const [content, setContent] = useState(
+    '<p>Selecione este texto para ver o menu bolha!</p>'
+  )
+
   return (
     <SheetContent className="!max-w-md">
       <SheetHeader>
@@ -35,7 +41,7 @@ export function UpdateMoto({ moto }: UpdateMotoProps) {
 
           <section className="space-y-1.5">
             <Label>Descrição</Label>
-            <Input value="Moto naked com excelente desempenho para uso urbano e viagens curtas." />
+            <TipTap content={content} setContent={setContent} />
           </section>
 
           <section className="space-y-1.5">
