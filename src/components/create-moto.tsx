@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   SheetClose,
   SheetContent,
@@ -8,8 +9,13 @@ import {
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
+import { TipTap } from './tiptap'
 
 export function CreateMoto() {
+  const [content, setContent] = useState(
+    '<p>Selecione este texto para ver o menu bolha!</p>'
+  )
+
   return (
     <SheetContent className="!max-w-md">
       <SheetHeader>
@@ -30,7 +36,7 @@ export function CreateMoto() {
 
           <section className="space-y-1.5">
             <Label>Descrição</Label>
-            <Input />
+            <TipTap content={content} setContent={setContent} />
           </section>
 
           <section className="space-y-1.5">
