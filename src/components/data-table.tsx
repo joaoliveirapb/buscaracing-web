@@ -29,9 +29,9 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="rounded-md border overflow-hidden">
+    <div className="relative rounded-md border max-h-[calc(100%-112px)] overflow-y-auto">
       <Table>
-        <TableHeader>
+        <TableHeader className="sticky top-0">
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow
               key={headerGroup.id}

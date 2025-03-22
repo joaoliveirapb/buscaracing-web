@@ -117,7 +117,7 @@
 
 @utility container {
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 @layer utilities {
@@ -136,6 +136,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  ::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-200 rounded-sm;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-500 rounded-sm;
   }
 
   /* Basic editor styles */
