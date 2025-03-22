@@ -50,11 +50,87 @@ export function App() {
         },
       ],
     },
+    {
+      id: '3',
+      name: 'Honda CRF 450R',
+      description:
+        'Moto off-road de alta performance, perfeita para competições e trilhas exigentes.',
+      price: 'R$ 58.900,00',
+      brand: 'Honda',
+      model: 'CRF 450R',
+      year: 2023,
+      km: '120 km',
+      images: [
+        {
+          id: 'img4',
+          filename: 'crf450r_front.jpg',
+          url: 'https://motociclismoonline.com.br/wp-content/uploads/2021/04/Honda-CRF-450R.jpeg',
+          path: '/images/crf450r_front.jpg',
+        },
+      ],
+    },
+    {
+      id: '4',
+      name: 'Kawasaki Ninja ZX-6R',
+      description:
+        'Esportiva com tecnologia de ponta, ideal para pistas e entusiastas de velocidade.',
+      price: 'R$ 72.990,00',
+      brand: 'Kawasaki',
+      model: 'Ninja ZX-6R',
+      year: 2025,
+      km: '0 km',
+      images: [
+        {
+          id: 'img6',
+          filename: 'zx6r_green.jpg',
+          url: 'https://kawasakiavantmotos.com.br/wp-content/uploads/2023/01/ninja-6r.png',
+          path: '/images/zx6r_green.jpg',
+        },
+      ],
+    },
+    {
+      id: '5',
+      name: 'Suzuki DR-Z400',
+      description:
+        'Moto versátil para uso misto, combinando conforto no asfalto e resistência em trilhas.',
+      price: 'R$ 38.750,00',
+      brand: 'Suzuki',
+      model: 'DR-Z400',
+      year: 2022,
+      km: '450 km',
+      images: [
+        {
+          id: 'img8',
+          filename: 'drz400_yellow.jpg',
+          url: 'https://motociclismoonline.com.br/wp-content/uploads/2024/11/drz4s__3_amarela.jpeg',
+          path: '/images/drz400_yellow.jpg',
+        },
+      ],
+    },
+    {
+      id: '6',
+      name: 'BMW S 1000 RR',
+      description:
+        'Superbike premium com design agressivo e desempenho excepcional em alta velocidade.',
+      price: 'R$ 125.000,00',
+      brand: 'BMW',
+      model: 'S 1000 RR',
+      year: 2024,
+      km: '0 km',
+      images: [
+        {
+          id: 'img9',
+          filename: 's1000rr_black.jpg',
+          url: 'https://www.powerbmw.com.br/wp-content/uploads/Imagem-Capa-Motos.jpg',
+          path: '/images/s1000rr_black.jpg',
+        },
+      ],
+    },
   ]
 
   return (
     <Sheet>
-      <main className="container min-h-screen space-y-5">
+      <main className="container h-screen space-y-4 pb-4 overflow-hidden">
         <Header />
         <DataTable columns={columns} data={motosData} />
       </main>
