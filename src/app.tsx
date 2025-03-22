@@ -1,8 +1,12 @@
-import { Sheet } from '@/components/ui/sheet'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Sheet } from './components/ui/sheet'
+import { Toaster } from './components/ui/sonner'
 import { Header } from './components/header'
+import { DataTable } from './components/data-table'
 import { CreateMoto } from './components/create-moto'
 import { columns, type Moto } from './components/columns'
-import { DataTable } from './components/data-table'
+
+const queryClient = new QueryClient()
 
 export function App() {
   const motosData: Moto[] = [
@@ -129,13 +133,17 @@ export function App() {
   ]
 
   return (
-    <Sheet>
-      <main className="container h-screen space-y-4 pb-4 overflow-hidden">
-        <Header />
-        <DataTable columns={columns} data={motosData} />
-      </main>
+    <QueryClientProvider client={queryClient}>
+      <Sheet>
+        <main className="container h-screen space-y-4 pb-4 overflow-hidden">
+          <Header />
+          <DataTable columns={columns} data={motosData} />
+        </main>
 
-      <CreateMoto />
-    </Sheet>
+        <CreateMoto />
+      </Sheet>
+
+      <Toaster />
+    </QueryClientProvider>
   )
 }
