@@ -12,18 +12,21 @@ import {
   TableHeader,
   TableRow,
 } from './ui/table'
+import { LoaderCircle } from 'lucide-react'
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+  data?: TData[]
+  isFetching: boolean
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  isFetching,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
-    data,
+    data: data || [],
     columns,
     getCoreRowModel: getCoreRowModel(),
   })
@@ -69,7 +72,14 @@ export function DataTable<TData, TValue>({
           ) : (
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
-                Sem resultados.
+                {isFetching ? (
+                  <div className="flex items-center justify-center gap-2">
+                    <LoaderCircle className="animate-spin" />
+                    Carregando...
+                  </div>
+                ) : (
+                  'Sem resultados.'
+                )}
               </TableCell>
             </TableRow>
           )}

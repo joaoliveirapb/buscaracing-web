@@ -1,5 +1,7 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { DataTableRowActions } from './data-table-row-actions'
+import { env } from '@/env'
+import parse from 'html-react-parser'
 
 export type Moto = {
   id: string
@@ -27,7 +29,7 @@ export const columns: ColumnDef<Moto>[] = [
 
       return (
         <img
-          src={image.url}
+          src={`${env.VITE_API_BASE_URL}/${image.url}`}
           alt={row.original.name}
           width={112}
           height={128}
@@ -37,7 +39,13 @@ export const columns: ColumnDef<Moto>[] = [
     },
   },
   { accessorKey: 'name', header: 'Nome' },
-  { accessorKey: 'description', header: 'Descrição' },
+  {
+    accessorKey: 'description',
+    header: 'Descrição',
+    cell: ({ row }) => (
+      <div className="w-md truncate">{parse(row.original.description)}...</div>
+    ),
+  },
   { accessorKey: 'price', header: 'Preço' },
   { accessorKey: 'brand', header: 'Marca' },
   { accessorKey: 'model', header: 'Modelo' },
