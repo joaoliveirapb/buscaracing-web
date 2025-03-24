@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createMoto } from '@/http/create-moto'
+import { useQueryClient } from '@tanstack/react-query'
 import {
   SheetClose,
   SheetContent,
@@ -35,6 +36,7 @@ const createMotoForm = z.object({
 type CreateMotoForm = z.infer<typeof createMotoForm>
 
 export function CreateMoto() {
+  const queryClient = useQueryClient()
   const [content, setContent] = useState(
     '<p>Selecione este texto para ver o menu bolha!</p>'
   )
@@ -64,6 +66,7 @@ export function CreateMoto() {
       return toast.error('Não foi possível publicar a moto. Tente novamente.')
     }
 
+    queryClient.invalidateQueries({ queryKey: ['get-motos'] })
     toast.success('Moto publicada com sucesso!')
     reset()
     setContent('<p>Selecione este texto para ver o Menu Bolha!</p>')
